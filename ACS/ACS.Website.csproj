@@ -154,12 +154,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ACSDbContext.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Config\ConfigAreaRegistration.cs" />
+    <Compile Include="Areas\Config\Controllers\HomeController.cs" />
     <Compile Include="Areas\Member\MemberAreaRegistration.cs" />
+    <Compile Include="ContextFactory.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -181,6 +184,9 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\Member\Views\web.config" />
     <Content Include="Areas\Config\Views\web.config" />
+    <Content Include="Areas\Config\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Config\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Config\Views\Home\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -221,9 +227,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Config\Controllers\" />
     <Folder Include="Areas\Config\Models\" />
-    <Folder Include="Areas\Config\Views\Shared\" />
     <Folder Include="Areas\Member\Controllers\" />
     <Folder Include="Areas\Member\Models\" />
     <Folder Include="Areas\Member\Views\Shared\" />
@@ -234,6 +238,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ACS.User\ACS.User.csproj">
+      <Project>{88c8a551-869d-4ee2-abff-613906771924}</Project>
+      <Name>ACS.User</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

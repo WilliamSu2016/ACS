@@ -46,8 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="BaseRepository.cs" />
+    <Compile Include="BaseService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\Encryption.cs" />
+    <Compile Include="Types\OrderType.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
