@@ -11,7 +11,7 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ACS</RootNamespace>
+    <RootNamespace>ACS.Website</RootNamespace>
     <AssemblyName>ACS</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
@@ -159,8 +159,11 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\Config\AdminAuthorizeAttribute.cs" />
     <Compile Include="Areas\Config\ConfigAreaRegistration.cs" />
+    <Compile Include="Areas\Config\Controllers\AdministratorController.cs" />
     <Compile Include="Areas\Config\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Config\Models\LoginViewModel.cs" />
     <Compile Include="Areas\Member\MemberAreaRegistration.cs" />
     <Compile Include="ContextFactory.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -168,6 +171,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -187,6 +191,7 @@
     <Content Include="Areas\Config\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Config\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Config\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Config\Views\Administrator\Login.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -199,7 +204,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -227,7 +234,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Config\Models\" />
     <Folder Include="Areas\Member\Controllers\" />
     <Folder Include="Areas\Member\Models\" />
     <Folder Include="Areas\Member\Views\Shared\" />
@@ -240,6 +246,10 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ACS.Data\ACS.Data.csproj">
+      <Project>{c5422846-6f9b-4c66-af2f-59b9c386e514}</Project>
+      <Name>ACS.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ACS.User\ACS.User.csproj">
       <Project>{88c8a551-869d-4ee2-abff-613906771924}</Project>
       <Name>ACS.User</Name>

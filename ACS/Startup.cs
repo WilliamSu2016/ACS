@@ -1,8 +1,8 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(ACS.Startup))]
-namespace ACS
+[assembly: OwinStartupAttribute(typeof(ACS.Website.Startup))]
+namespace ACS.Website
 {
     public partial class Startup
     {

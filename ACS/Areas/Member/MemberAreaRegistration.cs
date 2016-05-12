@@ -17,7 +17,8 @@ namespace ACS.Areas.Member
             context.MapRoute(
                 "Member_default",
                 "Member/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                new { action = "Index", id = UrlParameter.Optional },
+                new string[] { "ACS.Website.Areas.Member.Controllers" }
             );
         }
     }

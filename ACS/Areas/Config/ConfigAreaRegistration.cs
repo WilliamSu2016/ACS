@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace ACS.Areas.Config
+namespace ACS.Website.Areas.Config
 {
     public class ConfigAreaRegistration : AreaRegistration 
     {
@@ -17,7 +17,8 @@ namespace ACS.Areas.Config
             context.MapRoute(
                 "Config_default",
                 "Config/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                new { action = "Index", id = UrlParameter.Optional },
+                 new string[] { "ACS.Website.Areas.Config.Controllers" }
             );
         }
     }

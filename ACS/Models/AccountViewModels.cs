@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace ACS.Models
+namespace ACS.Website.Models
 {
     public class ExternalLoginConfirmationViewModel
     {

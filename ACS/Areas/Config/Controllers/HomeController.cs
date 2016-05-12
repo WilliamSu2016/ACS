@@ -4,8 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace ACS.Areas.Config.Controllers
+namespace ACS.Website.Areas.Config.Controllers
 {
+    [AdminAuthorize]
     public class HomeController : Controller
     {
         //
